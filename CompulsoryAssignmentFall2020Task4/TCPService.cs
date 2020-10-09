@@ -39,7 +39,7 @@ namespace CompulsoryAssignmentFall2020Task4
             return bookList;
         }
 
-        private void PutBook(Book newBook)
+        private void SaveBook(Book newBook)
         {
             bookList.Add(newBook);
         }
@@ -65,8 +65,8 @@ namespace CompulsoryAssignmentFall2020Task4
                     case "getAll":
                         answer = JsonSerializer.Serialize(GetBooks());
                         break;
-                    case "put":
-                        PutBook(JsonSerializer.Deserialize<Book>(request[1]));
+                    case "save":
+                        SaveBook(JsonSerializer.Deserialize<Book>(request[1]));
                         break;
                     default:
                         answer = "Desired request does not exist.";
